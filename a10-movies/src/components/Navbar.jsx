@@ -2,7 +2,6 @@ import React, { useState,useEffect } from 'react';
 import Link from 'next/link';
 import { options } from '@/ApiInfo';
 import SearchBar from './Search';
-import Image from 'next/image';
 
 function Navbar()  {
     const movieCategory = [

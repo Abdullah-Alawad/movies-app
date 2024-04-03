@@ -49,7 +49,6 @@ function ActorInfo({ actor, credits, allActors }) {
     </div>
   )): null;
 
-//"bg-gradient-to-r from-cyan-500 to-red-500"
   return (
     <div className='pb-10 bg-gradient-to-r from-yellow-600 to-teal-950 text-white font-custom'>
       <Navbar />

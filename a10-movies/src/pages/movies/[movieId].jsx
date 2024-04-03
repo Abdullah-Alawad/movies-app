@@ -86,7 +86,6 @@ function movieInfo({ movie, cast, similar, video}) {
     }
     setRatingColors(rating, pathColor, trailColor)
     
-    //bg-gradient-to-r from-cyan-500 to-red-500
     return (
         <div className="bg-gradient-to-r from-teal-950 to-yellow-600 font-custom">
           <Navbar />

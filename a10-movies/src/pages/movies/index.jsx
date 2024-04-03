@@ -1,16 +1,11 @@
 import React from 'react';
 import { ImageUrl, options } from '@/ApiInfo';
 import Link from 'next/link';
-import { useRouter } from 'next/router';
 import Navbar from '@/components/Navbar';
 
 
-  const MovieList = ({ movies, currentPage, totalPages }) => {
-   
-    const router = useRouter();
-    const handlePageChange = (newPage) => {
-      router.push(`/movies?page=${newPage}`);
-    };
+  const MovieList = ({ movies }) => {
+       
     return (
       <div className='bg-gradient-to-r from-teal-950 to-yellow-600'>
         <Navbar />
@@ -33,11 +28,6 @@ import Navbar from '@/components/Navbar';
             </li>
           ))}
         </ul>
-        {/* <Pagination
-          totalPages={totalPages}
-          currentPage={currentPage}
-          onPageChange={handlePageChange}
-        /> */}
       </div>
     );
   };
@@ -45,20 +35,17 @@ import Navbar from '@/components/Navbar';
   
   export async function getServerSideProps(context) {
     const { query } = context;
-    const currentPage = query.page || 1;
     const movieCategory = query.MovieCategory || "popular";
   
     let apiUrl;
-      apiUrl = `https://api.themoviedb.org/3/movie/${movieCategory}?language=en-US&page=${currentPage}`;
+      apiUrl = `https://api.themoviedb.org/3/movie/${movieCategory}?language=en-US&page=3`;
   
     const response = await fetch(apiUrl, options);
     const data = await response.json();
   
     return {
       props: {
-        movies: data.results || [],
-        currentPage: data.page || 1,
-        totalPages: data.total_pages || 100,
+        movies: data.results || []
       },
     };
   }

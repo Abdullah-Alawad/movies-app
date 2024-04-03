@@ -4,7 +4,7 @@ export const options = {
     method: 'GET',
     headers: {
       accept: 'application/json',
-      Authorization: 'Bearer '+ APIAccessToken
+      Authorization: 'Bearer '+ "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJjNWU5ZDllMGU1NmZiNWU3NThlNDdmYWZkOTdiNmM2ZiIsInN1YiI6IjY1NjYwMmUzNmMwYjM2MDBlNGRiYzQ2NyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.YX6hYgkuzF5tWmexeSHHIGsTAZKgkenbn620fCiH-VI"
     }
   };
 
